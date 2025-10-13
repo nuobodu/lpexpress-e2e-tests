@@ -1,0 +1,24 @@
+{
+  "name": "lpexpress-e2e-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuobodu/lpexpress-e2e-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuobodu/lpexpress-e2e-tests/issues"
+  },
+  "homepage": "https://github.com/nuobodu/lpexpress-e2e-tests#readme",
+  "devDependencies": {
+    "cypress": "^15.4.0",
+    "cypress-mochawesome-reporter": "^4.0.2"
+  }
+}
