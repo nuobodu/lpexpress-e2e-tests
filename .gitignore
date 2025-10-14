@@ -13,9 +13,3 @@ cypress/videos/
 cypress/reports/
 cypress/logs/
 cypress/downloads/
-
-# Configuration and Sensitive Data
-# IGNORE ANY file that contains sensitive configuration, like API keys
-.env
-.env.*
-cypress.env.json

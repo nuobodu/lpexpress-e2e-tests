@@ -16,7 +16,6 @@ describe('LEET-E1: Parcel Tracking Feature', () => {
   it('LEET-7: Verify tracking a parcel with a delivered status', () => {
 
     DELIVERED_TRACKING_NUMBERS.forEach((trackingNumber) => {
-
       ParcelTrackingPage.clearTrackingNumberInput();
       ParcelTrackingPage.trackParcel(trackingNumber);
       ParcelTrackingPage.verifyStatusIsDelivered(trackingNumber);
