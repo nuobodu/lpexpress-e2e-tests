@@ -1,12 +1,27 @@
 import ParcelTrackingPage from '../support/pages/ParcelTrackingPage';
 
+const DELIVERED_TRACKING_NUMBERS = [
+  "CC944279314LT",
+  "CJ009576563LT",
+  "LL018592621FR"
+];
+
 describe('LEET-E1: Parcel Tracking Feature', () => {
 
+  beforeEach('Visit tracking page', () => {
+    ParcelTrackingPage.visitTrackingPage();
+    ParcelTrackingPage.clickCookieAllowAllButton();
+  });
+
   it('LEET-7: Verify tracking a parcel with a delivered status', () => {
-    // All test steps will use the page object, NOT raw selectors.
-    // ParcelTrackingPage.visitTrackingPage();
-    // ParcelTrackingPage.enterTrackingNumber('LT123456');
-    // ParcelTrackingPage.clickTrackButton();
+
+    DELIVERED_TRACKING_NUMBERS.forEach((trackingNumber) => {
+
+      ParcelTrackingPage.clearTrackingNumberInput();
+      ParcelTrackingPage.trackParcel(trackingNumber);
+      ParcelTrackingPage.verifyStatusIsDelivered(trackingNumber);
+    });
+
   });
 
 });

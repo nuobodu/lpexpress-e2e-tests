@@ -1,23 +1,50 @@
+/// <reference types='cypress' />
+
 class ParcelTrackingPage {
 
-  // Define Locators here (e.g., input field, track button)
+  getCookieAllowAllButton() {
+    return cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll');
+  };
+
   getTrackingNumberInput() {
-    // return cy.get('#tracking-input-field'); // Placeholder
-  }
+    return cy.get('[inputid="parcel-number-or-recipient-name"]');
+  };
 
   getTrackButton() {
-    // return cy.get('#track-button'); // Placeholder
-  }
+    return cy.contains('[data-pc-name="button"]', 'Rasti siuntą');
+  };
 
-  // Define Actions here (Methods to interact with the page)
+  getLastDeliveryStatusBadge() {
+    return cy.get('us-delivery-progress us-delivery-progress-badge').last();;
+  };
+
+  getLastDeliveryProgressParagraph() {
+    return cy.get('us-delivery-progress p').last();;
+  };
+
+
   visitTrackingPage() {
-    // cy.visit('/tracking'); // Placeholder
-  }
+    cy.visit('/track');
+  };
 
-  enterTrackingNumber(number) {
-    // this.getTrackingNumberInput().type(number); // Placeholder
-  }
+  clickCookieAllowAllButton() {
+    this.getCookieAllowAllButton().click();
+  };
 
-}
+  trackParcel(number) {
+    this.getTrackingNumberInput().type(number)
+    this.getTrackButton().click();
+  };
+
+  verifyStatusIsDelivered(number) {
+    this.getLastDeliveryStatusBadge().should('contain', 'Siunta pristatyta');
+    this.getLastDeliveryProgressParagraph().should('contain', `${number} Siunta pristatyta`);
+  };
+
+  clearTrackingNumberInput() {
+    this.getTrackingNumberInput().clear();
+  };
+
+};
 
 export default new ParcelTrackingPage();
