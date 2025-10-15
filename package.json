@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cy:o": "npx cypress open",
-    "cy:r:ff": "npx cypress run --browser chrome",
+    "cy:r:ch": "npx cypress run --browser chrome",
     "merge:reports": "mochawesome-merge cypress/reports/json/*.json > cypress/reports/merged-report.json",
     "generate:html": "marge cypress/reports/merged-report.json -f index -o cypress/reports/html --inline",
     "report:ci": "npm run merge:reports && npm run generate:html"

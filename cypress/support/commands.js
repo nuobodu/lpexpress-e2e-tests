@@ -1,25 +1,31 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import ParcelTrackingPage from '../support/pages/ParcelTrackingPage';
+
+Cypress.Commands.add('visitTrackingPageAndAcceptCookies', () => {
+    Cypress.log({
+        name: 'visitTrackingPageAndAcceptCookies',
+        message: 'Visit tracking page and accepting all cookies'
+    });
+
+    ParcelTrackingPage.visitTrackingPage();
+    ParcelTrackingPage.acceptCookies();
+});
+
+Cypress.Commands.add('trackParcel', (trackingNumber) => {
+    Cypress.log({
+        name: 'trackParcel',
+        message: `Tracking parcel with: ${trackingNumber}`,
+        consoleProps: () => ({ trackingNumber }),
+    });
+
+    ParcelTrackingPage.clearTrackingNumberInput();
+    ParcelTrackingPage.trackParcel(trackingNumber);
+});
+
+Cypress.Commands.add('verifyDeliveryStatusIs', (expectedStatus) => {
+    Cypress.log({
+        name: 'trackParcelAndVerifyDeliveryStatus',
+        message: `Verifying delivery status with message ${expectedStatus}.`
+    });
+
+    ParcelTrackingPage.verifyStatusIsDelivered(expectedStatus);
+});

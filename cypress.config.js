@@ -10,6 +10,8 @@ module.exports = defineConfig({
   },
   e2e: {
     "baseUrl": "https://lpexpress.lt/",
+    viewportWidth: 1320,
+    viewportHeight: 1000,
     setupNodeEvents(on, config) {
       return config;
     },

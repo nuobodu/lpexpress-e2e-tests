@@ -15,19 +15,19 @@ class ParcelTrackingPage {
   };
 
   getLastDeliveryStatusBadge() {
-    return cy.get('us-delivery-progress us-delivery-progress-badge').last();;
+    return cy.get('us-delivery-progress us-delivery-progress-badge').last();
   };
 
   getLastDeliveryProgressParagraph() {
-    return cy.get('us-delivery-progress p').last();;
+    return cy.get('us-delivery-progress p').last();
   };
 
 
   visitTrackingPage() {
     cy.visit('/track');
   };
-
-  clickCookieAllowAllButton() {
+  
+  acceptCookies() {
     this.getCookieAllowAllButton().click();
   };
 
@@ -36,9 +36,9 @@ class ParcelTrackingPage {
     this.getTrackButton().click();
   };
 
-  verifyStatusIsDelivered(number) {
-    this.getLastDeliveryStatusBadge().should('contain', 'Siunta pristatyta');
-    this.getLastDeliveryProgressParagraph().should('contain', `${number} Siunta pristatyta`);
+  verifyStatusIsDelivered(statusMessage) {
+    this.getLastDeliveryStatusBadge().should('contain', statusMessage);
+    this.getLastDeliveryProgressParagraph().should('contain', `${statusMessage}`);
   };
 
   clearTrackingNumberInput() {

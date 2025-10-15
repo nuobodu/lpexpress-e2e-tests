@@ -1,6 +1,6 @@
 import ParcelTrackingPage from '../support/pages/ParcelTrackingPage';
 
-const DELIVERED_TRACKING_NUMBERS = [
+const deliveredTrackingNumbers = [
   "CC944279314LT",
   "CJ009576563LT",
   "LL018592621FR"
@@ -8,19 +8,17 @@ const DELIVERED_TRACKING_NUMBERS = [
 
 describe('LEET-E1: Parcel Tracking Feature', () => {
 
-  beforeEach('Visit tracking page', () => {
-    ParcelTrackingPage.visitTrackingPage();
-    ParcelTrackingPage.clickCookieAllowAllButton();
+  beforeEach('Visit tracking page and accept cookies', () => {
+    cy.visitTrackingPageAndAcceptCookies();
   });
 
   it('LEET-7: Verify tracking a parcel with a delivered status', () => {
 
-    DELIVERED_TRACKING_NUMBERS.forEach((trackingNumber) => {
-      ParcelTrackingPage.clearTrackingNumberInput();
-      ParcelTrackingPage.trackParcel(trackingNumber);
-      ParcelTrackingPage.verifyStatusIsDelivered(trackingNumber);
+    cy.wrap(deliveredTrackingNumbers).each((trackingNumber) => {
+      cy.trackParcel(trackingNumber);
+      cy.verifyDeliveryStatusIs('Siunta pristatyta');
     });
 
-  });
+  }); 
 
 });
