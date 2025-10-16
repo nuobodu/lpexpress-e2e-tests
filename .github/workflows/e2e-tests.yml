@@ -29,7 +29,6 @@ jobs:
     - name: Cypress Run
       uses: cypress-io/github-action@v6
       with:
-        spec: 'cypress/e2e/tracking.cy.js'
         browser: chrome
 
     - name: Run Report Merge and Generate HTML
