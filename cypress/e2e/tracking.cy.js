@@ -9,7 +9,8 @@ const deliveredTrackingNumbers = [
 describe('LEET-E1: Parcel Tracking Feature', () => {
 
   beforeEach('Visit tracking page and accept cookies', () => {
-    cy.visitTrackingPageAndAcceptCookies();
+    ParcelTrackingPage.visitTrackingPage();
+    ParcelTrackingPage.acceptCookies();
   });
 
   it('LEET-7: Verify tracking a parcel with a delivered status', () => {
@@ -19,6 +20,6 @@ describe('LEET-E1: Parcel Tracking Feature', () => {
       cy.verifyDeliveryStatusIs('Siunta pristatyta');
     });
 
-  }); 
+  });
 
 });
