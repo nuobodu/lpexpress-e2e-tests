@@ -9,7 +9,7 @@ module.exports = defineConfig({
     json: true,
   },
   e2e: {
-    "baseUrl": "https://lpexpress.lt/",
+    baseUrl: "https://lpexpress.lt/",
     viewportWidth: 1320,
     viewportHeight: 1000,
     setupNodeEvents(on, config) {
