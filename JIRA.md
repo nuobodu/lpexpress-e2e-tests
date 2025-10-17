@@ -1,0 +1,27 @@
+# Project Management Workflow (Jira)
+
+This project utilized a dedicated Jira project board to manage the E2E test automation lifecycle, from initial requirement definition to test execution and completion. This approach demonstrates structured agile practices, including sprint planning, task tracking, and integration with the GitHub repository.
+
+---
+
+## 1. Sprint Creation and Backlog Definition
+
+The project started by defining the initial backlog items (Epics and Stories) based on the test plan, and organizing them into **Sprint 1**. Each story contains detailed **Test Steps** and **Expected Results**.
+
+![01_Sprint creation](/images/01_Sprint%20creation.png)
+
+---
+
+## 2. GitHub Integration
+
+The Jira environment was linked directly to the GitHub repository. This automation allowed to see the corresponding **commits** and **build status** directly on the Jira ticket (LEET-7), ensuring full traceability between the ticket, the code, and the continuous integration (CI) pipeline.
+
+![02_Jira and Github link implementation](/images/02_Jira%20and%20Github%20link%20implementation.png)
+
+---
+
+## 3. Completing Test Automation
+
+Tasks were progressed through the workflow (To Do, In Progress, Done) as development and testing concluded. Once the automated tests were written and committed, the tickets were marked as **Done**, providing a visual record of the project's completion.
+
+![03_Complete'ing test automation](/images/03_Complete'ing%20test%20automation.png)

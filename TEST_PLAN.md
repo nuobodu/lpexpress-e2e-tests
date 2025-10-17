@@ -30,7 +30,7 @@ This document outlines the test scenarios and cases for the **LP Express E2E Tes
 | Test Case ID   | Description | Preconditions | Expected Result | Status |
 | :---           | :--- | :--- | :--- | :--- |
 | **LEET-9** | Verify locker-to-locker price for the smallest (XS) parcel to be sent to Vilnius. | User is on the dedicated parcel sending page. | Expanded cart details confirm **XS size ("61/18.5/8cm")**, correct recipient address (as selected by the user), and price **"1,95 €"**. | Passed |
-| **LEET-10** | Verify locker-to-locker price for the largest (XL) parcel to be sent to Klaipėda. | User is on the dedicated parcel sending page. | Expanded cart details confirm **XL size ("61/35/74.5cm")**, correct recipient address (as selected by the user), and price **"6,92 €"**. | Passed |
+| **LEET-10** | Verify locker-to-locker price for the largest (XL) parcel to be sent to Klaipėda. | User is on the dedicated parcel sending page. | Expanded cart details confirm **XL size ("61/35/74.5cm")**, correct recipient address (as selected by the user), and price **"6,95 €"**. | Passed |
 | **LEET-11** | Verify locker-to-locker price for a medium-sized (M) parcel to a random valid Lithuanian city. | User is on the dedicated parcel sending page. | Expanded cart details confirm **M size ("61/35/17.5cm")**, correct recipient address (as selected by the user), and price **"3,45 €"**. | Passed |
 
 ---

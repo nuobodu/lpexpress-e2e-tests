@@ -8,7 +8,8 @@
     "cy:r:ch": "npx cypress run --browser chrome",
     "merge:reports": "mochawesome-merge cypress/reports/json/*.json > cypress/reports/merged-report.json",
     "generate:html": "marge cypress/reports/merged-report.json -f index -o cypress/reports/html --inline",
-    "report:ci": "npm run merge:reports && npm run generate:html"
+    "report:ci": "npm run merge:reports && npm run generate:html",
+    "cy:r:report:local": "npm run cy:r:ch && npm run report:ci"
   },
   "repository": {
     "type": "git",

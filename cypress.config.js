@@ -17,6 +17,10 @@ module.exports = defineConfig({
       runMode: 2,
       openMode: 2,
     },
+    specPattern: [
+      'cypress/e2e/track.cy.js',
+      'cypress/e2e/send.cy.js',
+    ],
     setupNodeEvents(on, config) {
       return config;
     },
