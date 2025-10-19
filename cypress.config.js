@@ -14,12 +14,13 @@ module.exports = defineConfig({
     viewportHeight: 1000,
     defaultCommandTimeout: 8000,
     retries: {
-      runMode: 2,
-      openMode: 2,
+      runMode: 1,
+      openMode: 1,
     },
     specPattern: [
       'cypress/e2e/track.cy.js',
       'cypress/e2e/send.cy.js',
+      'cypress/e2e/map.cy.js',
     ],
     setupNodeEvents(on, config) {
       return config;

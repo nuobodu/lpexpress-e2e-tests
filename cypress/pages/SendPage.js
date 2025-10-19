@@ -49,12 +49,11 @@ class SendPage {
     getCityLabel: () => cy.get(this.selector.cityLabel),
     getSearchInput: () => cy.get(this.selector.SearchInput),
     getFirstCitySearchResult: () => cy.get(this.selector.citySearchResultFirst),
-    getLockerSelect: () => cy.get(this.selector.lockerInput),
+    getLockerInput: () => cy.get(this.selector.lockerInput),
     getLockerSearchResults: () => cy.get(this.selector.lockerSearchResults),
     getExpandDetailsButtons: () => cy.get(this.selector.expandDetailsButtons),
     getExpandedDetailsListItems: () => cy.get(this.selector.expandedDetailsListItems)
   };
-
 
   visit() {
     cy.visit('/cart/order/options');
@@ -84,12 +83,12 @@ class SendPage {
     this.element.getNextBtn().contains('Toliau').click();
   }
 
-  clickCitySelect() {
+  clickCityInput() {
     this.element.getCityLabel().parent().find('input').first().filter(':visible').click();
   }
 
-  clickLockerSelect() {
-    this.element.getLockerSelect().find('input').first().filter(':visible').click();
+  clickLockerInput() {
+    this.element.getLockerInput().find('input').first().filter(':visible').click();
   }
 
   clickCitySearchResultContaining(city) {

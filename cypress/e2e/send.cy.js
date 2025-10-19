@@ -13,11 +13,11 @@ const data = {
     phone: '60606006',
     email: 'petras.petraitris@gmail.com'
   }
-}
+};
 
 describe('LEET-E2: Parcel Sending Price Calculation', () => {
 
-  beforeEach('Visit tracking page and accept cookies', () => {
+  beforeEach('Visit sending page and accept cookies', () => {
     SendPage.visit();
     SendPage.acceptCookies();
   });
@@ -35,10 +35,10 @@ describe('LEET-E2: Parcel Sending Price Calculation', () => {
     SendPage.clickNextBtn();
 
     SendPage.fillSenderAndReceiverDetails(data);
-    SendPage.clickCitySelect();
+    SendPage.clickCityInput();
     SendPage.typeCity('Vilnius');
     SendPage.clickCitySearchResultContaining('Vilnius');
-    SendPage.clickLockerSelect();
+    SendPage.clickLockerInput();
     SendPage.typeLocker('Akropolis');
     SendPage.clickLockerSearchResultContaining('Akropolis');
     SendPage.clickNextBtn();
@@ -59,10 +59,10 @@ describe('LEET-E2: Parcel Sending Price Calculation', () => {
     SendPage.clickNextBtn();
 
     SendPage.fillSenderAndReceiverDetails(data);
-    SendPage.clickCitySelect();
+    SendPage.clickCityInput();
     SendPage.typeCity('Klaipėda');
     SendPage.clickCitySearchResultContaining('Klaipėda');
-    SendPage.clickLockerSelect();
+    SendPage.clickLockerInput();
     SendPage.typeLocker('Akropolis, Taikos pr. 61');
     SendPage.clickLockerSearchResultContaining('Akropolis, Taikos pr. 61');
     SendPage.clickNextBtn();
@@ -83,10 +83,10 @@ describe('LEET-E2: Parcel Sending Price Calculation', () => {
     SendPage.clickNextBtn();
 
     SendPage.fillSenderAndReceiverDetails(data);
-    SendPage.clickCitySelect();
+    SendPage.clickCityInput();
     SendPage.typeCity('Nida');
     SendPage.clickCitySearchResultContaining('Nida');
-    SendPage.clickLockerSelect();
+    SendPage.clickLockerInput();
     SendPage.typeLocker('Maxima, Naglių g.29A');
     SendPage.clickLockerSearchResultContaining('Maxima, Naglių g.29A');
     SendPage.clickNextBtn();
