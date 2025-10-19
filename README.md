@@ -127,7 +127,7 @@ This project includes two main scripts for local execution: one for the Cypress 
 
 The complete testing strategy, including **all defined scenarios, preconditions, and expected results** for every implemented test case (LEET-7 through LEET-14), is detailed in a separate documentation file.
 
-* **[View the Full Test Plan and Scenarios (TEST_PLAN.md)](./TEST_PLAN.md)**
+* **[View the Full Test Plan and Scenarios (testCases.md)](./testCases.md)**
 
 ---
 
@@ -135,7 +135,7 @@ The complete testing strategy, including **all defined scenarios, preconditions,
 
 This project was managed using a **Jira** to demonstrate agile practices, track progress, and organize test development into sprints.
 
-* **[View the Project Board and Task Statuses (JIRA.md)](./JIRA.md)**
+* **[View the Project Board and Task Statuses (jira.md)](./jira.md)**
   
 ---
 ## Roadmap
@@ -143,9 +143,9 @@ This project was managed using a **Jira** to demonstrate agile practices, track 
 * [x] Initial E2E test scenarios and test cases defined (LEET-7 through LEET-14)
 * [x] CI Pipeline setup with GitHub Actions
 * [x] Consolidated HTML Reporting (Mochawesome)
-* [ ] Implement automation of the initial 8 E2E test cases (LEET-7 through LEET-14)
-* [ ] Create additional E2E test cases for initial scenarios for more coverage
-* [ ] Implement automation of the additional test cases
+* [x] Implement automation of the initial 8 E2E test cases (LEET-7 through LEET-14)
+* [x] Create additional E2E test cases for initial scenarios for more coverage
+* [x] Implement automation of the additional test cases
 
 ---
 
