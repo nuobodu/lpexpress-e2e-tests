@@ -1,10 +1,9 @@
 <a id="readme-top"></a>
 <br />
 <div align="center">
-  <a href="https://github.com/nuobodu/lpexpress-e2e-tests">
-    <img src="images/E2E.png" alt="Logo" width="80" height="80">
-    <img src="images/cypressLogo.webp" alt="Logo" width="80" height="80">
-  </a>
+    
+  <img src="images/E2E.png" alt="Logo" width="80" height="80">
+  <img src="images/cypressLogo.webp" alt="Logo" width="80" height="80">
 
   <h1 align="center">E2E Test Automation Project for LP Express</h3>
   
@@ -71,6 +70,7 @@ The solution provides comprehensive coverage across three critical feature areas
 * [![Jira-shield]][Jira-url]
 * [![Cypress][Cypress-E2E-Tests-shield]][Cypress-url]
 * [![GitHub Actions][CI-with-GitHub-Actions-shield]][CI-with-GitHub-Actions-url]
+* [![RIMRAF][RIMRAF-shield]][RIMRAF-url]
 * [![Mochawesome][Report-Generation-shield]][Report-Generation-url]
 
 ---
@@ -176,6 +176,8 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for more information
 [Cypress-url]: https://www.cypress.io/
 [CI-with-GitHub-Actions-shield]: https://img.shields.io/badge/GitHub_Actions-2088FF.svg?labelColor=grey&style=for-the-badge&logo=githubactions&logoColor=2088FF
 [CI-with-GitHub-Actions-url]: https://docs.github.com/en/actions
+[RIMRAF-shield]: https://img.shields.io/badge/RIMRAF-CB3837.svg?labelColor=grey&style=for-the-badge&logo=npm&logoColor=CB3837
+[RIMRAF-url]: https://www.npmjs.com/package/rimraf
 [Report-Generation-shield]: https://img.shields.io/badge/Mochawesome-CB3837.svg?labelColor=grey&style=for-the-badge&logo=npm&logoColor=CB3837
 [Report-Generation-url]: https://www.npmjs.com/package/mochawesome
 [GitHub-shield]: https://img.shields.io/badge/GitHub-181717?labelColor=grey&style=for-the-badge&logo=github&logoColor=white
