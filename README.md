@@ -58,7 +58,7 @@ The project is a set of automated E2E tests built with **Cypress** to verify the
 The solution provides comprehensive coverage across three critical feature areas:
 
 1.  **Parcel Tracking:** Testing for both delivered status (Positive) and clear error messaging (Negative) when tracking parcels.
-2.  **Parcel Sending:** E2E flow for price calculation (XS, M and XL parcels) and order summary validation.
+2.  **Parcel Sending:** Full E2E flow for locker-to-locker price calculation (XS, S, M, L and XL parcels) and order summary validation.
 3.  **Locker Map:** Verification of search and filtering functionality (City selection, partial and exact address search).
   
 ---
@@ -91,16 +91,11 @@ This project requires Node.js and npm (which is usually bundled with Node.js).
 
 1. Clone the repo
    ```sh
-   git clone [https://github.com/nuobodu/lpexpress-e2e-tests.git](https://github.com/nuobodu/lpexpress-e2e-tests.git)
+   git clone https://github.com/nuobodu/lpexpress-e2e-tests.git
    ```
 2. Install NPM packages
    ```sh
    npm install
-   ```
-3. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
    ```
 
 ---
@@ -116,7 +111,7 @@ This project includes two main scripts for local execution: one for the Cypress 
 
 2.  **Run Tests in Headless Mode (CI Flow)**: To execute all tests in headless mode (like in the CI pipeline) and generate the final report:
     ```bash
-    npm run cy:r:report:local
+    npm run cy:run
     ```
     This command executes all tests and generates the report. The final **HTML report** will be generated at: `cypress/reports/html/index.html`.
 
@@ -125,7 +120,7 @@ This project includes two main scripts for local execution: one for the Cypress 
 
 ## Test Documentation
 
-The complete testing strategy, including **all defined scenarios, preconditions, and expected results** for every implemented test case (LEET-7 through LEET-14), is detailed in a separate documentation file.
+The complete testing strategy, including **all defined scenarios, preconditions, and expected results** for every implemented test case (LEET-7 through LEET-21), is detailed in a separate documentation file.
 
 * **[View the Full Test Plan and Scenarios (testCases.md)](./testCases.md)**
 
@@ -146,6 +141,7 @@ This project was managed using a **Jira** to demonstrate agile practices, track 
 * [x] Implement automation of the initial 8 E2E test cases (LEET-7 through LEET-14)
 * [x] Create additional E2E test cases for initial scenarios for more coverage
 * [x] Implement automation of the additional test cases
+* [ ] **Refactor Data Management using Cypress Fixtures** (Move all test data: addresses, names, tracking numbers, etc., to `cypress/fixtures`.)
 
 ---
 
