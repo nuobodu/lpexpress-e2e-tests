@@ -141,7 +141,7 @@ This project was managed using a **Jira** to demonstrate agile practices, track 
 * [x] Implement automation of the initial 8 E2E test cases (LEET-7 through LEET-14)
 * [x] Create additional E2E test cases for initial scenarios for more coverage
 * [x] Implement automation of the additional test cases
-* [ ] **Refactor Data Management using Cypress Fixtures** (Move all test data: addresses, names, tracking numbers, etc., to `cypress/fixtures`.)
+* [x] **Refactor Data Management using Cypress Fixtures** (Move all test data: addresses, names, tracking numbers, etc., to `cypress/fixtures`.)
 
 ---
 

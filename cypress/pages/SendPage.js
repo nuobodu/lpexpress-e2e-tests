@@ -158,19 +158,14 @@ class SendPage {
   }
 
   fillSenderAndReceiverDetails(data, countryCode) {
-    if (data.sender.name) this.element.getSender.nameInput().type(data.sender.name);
-    if (data.sender.phone) this.element.getSender.phoneInput().click().wait(500).type(data.sender.phone);
-    if (data.sender.email) this.element.getSender.emailInput().type(data.sender.email);
-    if (data.receiver.name) this.element.getReceiver.nameInput().type(data.receiver.name);
-    if (data.receiver.email) this.element.getReceiver.emailInput().type(data.receiver.email);
-
+    this.element.getSender.nameInput().type(data.sender.name);
+    this.element.getSender.phoneInput().click().wait(500).type(data.sender.phone);
+    this.element.getSender.emailInput().type(data.sender.email);
+    this.element.getReceiver.nameInput().type(data.receiver.name);
     const receiverPhone = countryCode ? data.receiver.phone[countryCode] : data.receiver.phone.LT;
-
-    if (receiverPhone) {
-      this.element.getReceiver.phoneInput().click().wait(500).type(receiverPhone);
-    }
+    this.element.getReceiver.phoneInput().click().wait(500).type(receiverPhone);
+    this.element.getReceiver.emailInput().type(data.receiver.email);
   };
-
 };
 
 export default new SendPage();

@@ -1,0 +1,9 @@
+{
+  "valid": {
+    "delivered": ["CC944279314LT", "CJ009576563LT", "LL018592621FR"],
+    "deliveredWithSpaces": " CC944279314LT "
+  },
+  "invalid": {
+    "number": "CC123456789LT"
+  }
+}

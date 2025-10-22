@@ -1,15 +1,7 @@
 /// <reference types='cypress' />
 
 import MapPage from '../pages/MapPage';
-
-const plungeLockers = [
-  'Kalniškių g.18',
-  'Laisvės g. 5',
-  'J.Tumo-Vaižganto g. 81',
-  'J.Tumo-Vaižganto g. 110',
-  'Dariaus ir Girėno g. 54'
-];
-
+import lockerData from '../fixtures/lockerData.json';
 
 describe('LEET-E3: Parcel Locker Map', () => {
 
@@ -22,28 +14,30 @@ describe('LEET-E3: Parcel Locker Map', () => {
     MapPage.element.getRecipientCountry().should('contain', 'Lietuva');
     MapPage.getSearchByLockerAddressOption().should('have.class', MapPage.selector.highlighted);
     MapPage.clickCityInput();
-    MapPage.typeCity('Plungė');
-    MapPage.clickCitySearchResultContaining('Plungė');
+    MapPage.typeCity(lockerData.cityLT.plunge1.name);
+    MapPage.clickCitySearchResultContaining(lockerData.cityLT.plunge1.name);
 
-    MapPage.element.getSearchYieldedLockerAddresses().should('have.length', plungeLockers.length);
-    cy.wrap(plungeLockers).each((lockerAddress) => {
+    MapPage.element.getSearchYieldedLockerAddresses().should('have.length', lockerData.cityLT.plunge1.lockersAddressesList.length);
+    cy.wrap(lockerData.cityLT.plunge1.lockersAddressesList).each((lockerAddress) => {
       MapPage.element.getSearchYieldedLockerAddresses().should('contain', lockerAddress);
     });
   });
 
   it('LEET-13: Verify that searching with a valid street name correct parcel lockers is displayed within the list.', () => {
+    const partOfAddress = lockerData.partOfAddress.valid;
+
     MapPage.element.getRecipientCountry().should('contain', 'Lietuva');
     MapPage.getSearchByLockerAddressOption().should('have.class', MapPage.selector.highlighted);
-    MapPage.typeLockerAddress('laisvės');
+    MapPage.typeLockerAddress(partOfAddress);
     cy.wait(500);
 
     MapPage.element.getSearchYieldedLockerAddresses().each(($yieldedLockerAddress) => {
-      cy.wrap($yieldedLockerAddress.text().toLowerCase()).should('contain', 'laisvės');
+      cy.wrap($yieldedLockerAddress.text().toLowerCase()).should('contain', partOfAddress);
     });
   });
 
   it('LEET-14: Verify that searching with a valid specific address correct parcel locker is displayed within the list.', () => {
-    const lockerAddress = 'Nidos g. 1, Dercekliai';
+    const lockerAddress = lockerData.cityLT.klaipeda2.lockerAddress;
 
     MapPage.element.getRecipientCountry().should('contain', 'Lietuva');
     MapPage.getSearchByLockerAddressOption().should('have.class', MapPage.selector.highlighted);
@@ -58,11 +52,11 @@ describe('LEET-E3: Parcel Locker Map', () => {
   });
 
   it('LEET-19: Verify that searching with a non-existent address returns no results and displays an appropriate message.', () => {
-    const lockerAddress = 'Neptūno';
+    const partOfAddress = lockerData.partOfAddress.invalid;
 
     MapPage.element.getRecipientCountry().should('contain', 'Lietuva');
     MapPage.getSearchByLockerAddressOption().should('have.class', MapPage.selector.highlighted);
-    MapPage.typeLockerAddress(lockerAddress);
+    MapPage.typeLockerAddress(partOfAddress);
     cy.wait(500);
 
     MapPage.element.getParcelLockerListField()
@@ -70,7 +64,7 @@ describe('LEET-E3: Parcel Locker Map', () => {
   });
 
   it(`LEET-20: Verify that clicking an address in the search result list displays that locker's detailed information card on the map.`, () => {
-    const lockerAddress = 'Kalvarijų g. 180';
+    const lockerAddress = lockerData.cityLT.vilnius2.lockerAddress;
 
     MapPage.element.getRecipientCountry().should('contain', 'Lietuva');
     MapPage.getSearchByLockerAddressOption().should('have.class', MapPage.selector.highlighted);
@@ -84,7 +78,7 @@ describe('LEET-E3: Parcel Locker Map', () => {
   });
 
   it(`LEET-21: Verify that clicking an address in the search result list displays that locker's detailed information card on the map.`, () => {
-    const lockerAddress = 'Brīvības iela 9';
+    const lockerAddress = lockerData.cityLV.barkava1.lockerAddress;
 
     MapPage.clickCountryDropdown();
     MapPage.clickDropdownCountryLatvija();

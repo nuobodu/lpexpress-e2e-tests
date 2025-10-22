@@ -1,0 +1,15 @@
+{
+  "sender": {
+    "name": "Jonas Jonaitis",
+    "phone": "69696996",
+    "email": "jonas.jonaitis@gmail.com"
+  },
+  "receiver": {
+    "name": "Petras Petraitis",
+    "phone": {
+      "LT": "60606006",
+      "LV": "26665555"
+    },
+    "email": "petras.petraitris@gmail.com"
+  }
+}

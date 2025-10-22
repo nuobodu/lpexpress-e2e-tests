@@ -1,0 +1,55 @@
+{
+  "cityLT": {
+    "vilnius1": {
+      "name": "Vilnius",
+      "lockerNameAndAddress": "Akropolis, Ozo g. 25",
+      "lockerAddress": "Ozo g. 25"
+    },
+    "vilnius2": {
+      "name": "Vilnius",
+      "lockerNameAndAddress": "LIDL, Kalvarijų g. 180",
+      "lockerAddress": "Kalvarijų g. 180"
+    },
+    "klaipeda1": {
+      "name": "Klaipėda",
+      "lockerNameAndAddress": "Akropolis, Taikos pr. 61",
+      "lockerAddress": "Taikos pr. 61"
+    },
+    "klaipeda2": {
+      "name": "Klaipėda",
+      "lockerNameAndAddress": "Rimi Dercekliai, Nidos g. 1, Dercekliai",
+      "lockerAddress": "Nidos g. 1, Dercekliai"
+    },
+    "nida1": {
+      "name": "Nida",
+      "lockerNameAndAddress": "Maxima, Naglių g.29A",
+      "lockerAddress": "Naglių g.29A"
+    },
+    "plunge1": {
+      "name": "Plungė",
+      "lockersAddressesList": [
+        "Kalniškių g.18",
+        "Laisvės g. 5",
+        "J.Tumo-Vaižganto g. 81",
+        "J.Tumo-Vaižganto g. 110",
+        "Dariaus ir Girėno g. 54"
+      ]
+    }
+  },
+  "cityLV": {
+    "liepaja1": {
+      "name": "Liepāja",
+      "lockerNameAndAddress": "Maxima (Udrop), Klaipēdas iela 62",
+      "lockerAddress": "Klaipēdas iela 62"
+    },
+    "barkava1": {
+      "name": "Barkava",
+      "lockerNameAndAddress": "Barkava Pašvaldība (Latvijas pasts), Brīvības iela 9",
+      "lockerAddress": "Brīvības iela 9"
+    }
+  },
+  "partOfAddress": {
+    "valid": "laisvės",
+    "invalid": "Neptūno"
+  }
+}

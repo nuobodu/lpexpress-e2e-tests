@@ -1,19 +1,17 @@
 import TrackPage from '../pages/TrackPage';
-
-const deliveredParcelNumbers = ['CC944279314LT', 'CJ009576563LT', 'LL018592621FR'];
-const deliveredParcelNumberWithSpaces = ' CC944279314LT ';
-const invalidParcelNumber = 'CC123456789LT';
+import parcelNumbers from '../fixtures/parcelNumbers.json';
 
 describe('LEET-E1: Parcel Tracking Feature', () => {
 
   beforeEach('Visit tracking page and accept cookies', () => {
+
     TrackPage.visit();
     TrackPage.acceptCookies();
   });
 
   it('LEET-7: Verify tracking a parcel with a delivered status', () => {
 
-    cy.wrap(deliveredParcelNumbers).each((parcelNumber) => {
+    cy.wrap(parcelNumbers.valid.delivered).each((parcelNumber) => {
       TrackPage.clearParcelNumberInput();
       TrackPage.typeParcelNumber(parcelNumber);
       TrackPage.clickTrackBtn();
@@ -25,7 +23,8 @@ describe('LEET-E1: Parcel Tracking Feature', () => {
   });
 
   it('LEET-8: Verify tracking a parcel with a delivered status', () => {
-    TrackPage.typeParcelNumber(invalidParcelNumber);
+
+    TrackPage.typeParcelNumber(parcelNumbers.invalid.number);
     TrackPage.clickTrackBtn();
 
     TrackPage.element.getParcelNotFoundMessage().should('contain', 'Jūsų siuntos nepavyko rast');
@@ -34,8 +33,9 @@ describe('LEET-E1: Parcel Tracking Feature', () => {
   });
 
   it('LEET-15: Verify tracking for a parcel number with leading and trailing white-spaces.', () => {
+
     TrackPage.clearParcelNumberInput();
-    TrackPage.typeParcelNumber(deliveredParcelNumberWithSpaces);
+    TrackPage.typeParcelNumber(parcelNumbers.valid.deliveredWithSpaces);
     TrackPage.clickTrackBtn();
 
     TrackPage.element.getNewestDeliveryStatusBadge().should('contain', 'Siunta pristatyta');
